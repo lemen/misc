@@ -1,0 +1,3 @@
+#!/bin/bash
+
+wget -qO- whatismyip.org > /home/clemens/Dropbox/ip_home
