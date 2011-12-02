@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if test $# -eq 3
+then
+
+	MERGE=`echo $1 | cut -d'.' -f1`.merge
+
+	cat $1 $2 > $MERGE
+
+	mencoder -forceidx -oac copy -ovc copy $MERGE -o $3.avi
+
+	rm $MERGE
+
+else
+	echo -e 'usage: avimerge FILE1 FILE2 OUTPUTNAME\n\tmerges 2 avi files'
+fi
